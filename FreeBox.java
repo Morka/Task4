@@ -67,16 +67,6 @@ public class FreeBox implements Pict {
  			ret += "\n";
  			
  		}
- 		
- 		/*for(int j = 0; j < roundheight; j++) {
- 			for(int i=0; i < roundwidth; i++) {
-
- 				ret += frame;
- 				
- 				if(i == (roundwidth-1))
-						ret += "\n";
- 			}
- 		}*/
  		return ret;
  	}
 }
