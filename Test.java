@@ -7,6 +7,8 @@ public class Test {
 	public static void main(String[] args) {
 		Box box1, box2;
 		ClearBox box3;
+		FreeBox box4;
+		
 		Pict[][] repeated = new Pict[10][11];
 		
 		//create new Box with width=5, height=5, content=0 and frame=-
@@ -16,10 +18,13 @@ public class Test {
 		//create new ClearBox with width=4, height=10, content=z and frame=*
 		box3 = new ClearBox(4,10,'z');
 		
+		box4 = new FreeBox("1123" + "\n" + "1233");
+		
 		
 		System.out.println(box1.toString());
 		System.out.println(box2.toString());
 		System.out.println(box3.toString());
+		System.out.println(box4.toString());
 		
 		System.out.println("box1.width: " + box1.getWidth() + " box1.height: " + box1.getHeight());
 		System.out.println("box2.width: " + box2.getWidth() + " box2.height: " + box2.getHeight());
@@ -33,6 +38,10 @@ public class Test {
 		box1.scale(5);
 		box2.scale(0.5);
 		box3.scale(3);
+		box4.scale(2);
+		
+				System.out.println(box4.toString());
+
 		
 		System.out.println("box1.width: " + box1.getWidth() + " box1.height: " + box1.getHeight());
 		System.out.println("box2.width: " + box2.getWidth() + " box2.height: " + box2.getHeight());
@@ -47,10 +56,13 @@ public class Test {
 		repeated[0][0] = box1;
 		repeated[0][1] = box2;
 		repeated[1][1] = box3;
-		
-		Repeated rep = new Repeated(repeated);//, repeated.length, repeated[0].length);
+		/*
+		Scaled scale = new Scaled(repeated);
 		
 		System.out.println("Rep to String");
+		System.out.println(scale.toString());*/
+		
+		Repeated rep = new Repeated(repeated);
 		System.out.println(rep.toString());
 	}
 }

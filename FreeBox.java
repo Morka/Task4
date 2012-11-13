@@ -46,7 +46,6 @@ public class FreeBox implements Pict {
 		
 	}
 	
-	
 	public double getWidth(){
 		return width;
 	}
