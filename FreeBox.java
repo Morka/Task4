@@ -4,7 +4,7 @@
  
 public class FreeBox implements Pict {
 	
-	 private int height, width; 
+	 private double height, width; 
 	 private double scaleFactor;
 	 private String[] text; //ODER CHAR[][]
 	 
@@ -46,6 +46,14 @@ public class FreeBox implements Pict {
 		
 	}
 	
+	public double getWidth(){
+		return width;
+	}
+	
+	public double getHeight(){
+		return height;
+	}
+	
 	/**
 	 * returns a read- and printable String of the box and repeats the box if it is smaller than its actual size
 	 * 
@@ -60,7 +68,7 @@ public class FreeBox implements Pict {
  			
  			for(int j = 0; j < outputWidth; j++){
 
- 				ret += this.text[i % this.height].charAt(j % this.width);//0-offset!!! egal geht bei 0 los - charAt???
+ 				ret += this.text[i % (int)this.height].charAt(j % (int)this.width);//0-offset!!! egal geht bei 0 los - charAt???
  				
  			}
  			

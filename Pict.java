@@ -11,4 +11,8 @@ public interface Pict {
      
  	 public void scale(double factor);
  	 // 0.1 <= factor <= 10.0; resize the picture
+ 	 
+ 	 public double getHeight();
+ 	 
+ 	 public double getWidth();
  }

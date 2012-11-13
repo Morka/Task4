@@ -7,6 +7,7 @@ public class Test {
 	public static void main(String[] args) {
 		Box box1, box2;
 		ClearBox box3;
+		Pict[][] repeated = new Pict[10][11];
 		
 		//create new Box with width=5, height=5, content=0 and frame=-
 		box1 = new Box(5,5,'o','-');
@@ -41,5 +42,14 @@ public class Test {
 		System.out.println(box3.toString());
 		
 		System.out.println("box3.getRatio(): " + box3.getRatio());
+		
+		repeated[0][0] = box1;
+		repeated[0][1] = box2;
+		repeated[1][1] = box3;
+		
+		Repeated rep = new Repeated(repeated);//, repeated.length, repeated[0].length);
+		
+		System.out.println("Rep to String");
+		System.out.println(rep.toString());
 	}
 }
