@@ -15,4 +15,5 @@ public class ClearBox extends Box implements Pict {
  	 public double getRatio() {
  	 	 return (getWidth())/(getHeight());
  	 }
+ 	 
 }

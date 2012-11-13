@@ -4,7 +4,6 @@ public class Repeated{
 	private Pict[][] repeated;
 	
 	
-	
 	public Repeated(Pict[][] repeated){
 		this.repeated = new Pict[repeated.length][repeated[0].length];
 		this.repeated = repeated;
@@ -30,6 +29,7 @@ public class Repeated{
 				}
 			}
 		}
+		
 		return ret;
 	}
 	

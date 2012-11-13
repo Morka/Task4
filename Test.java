@@ -16,6 +16,7 @@ public class Test {
 		//create new ClearBox with width=4, height=10, content=z and frame=*
 		box3 = new ClearBox(4,10,'z');
 		
+		
 		System.out.println(box1.toString());
 		System.out.println(box2.toString());
 		System.out.println(box3.toString());

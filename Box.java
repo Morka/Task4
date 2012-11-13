@@ -35,6 +35,7 @@ public class Box implements Pict {
  	}
  	 
  	
+ 	
  	/**
  	* returns the picture as String
 	*

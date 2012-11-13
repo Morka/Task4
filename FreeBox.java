@@ -34,7 +34,7 @@ public class FreeBox implements Pict {
  	 public double getRatio() {
  	 	 return (this.width)/(this.height);
  	 }
-
+ 	 
 	/**
 	 * Sets the factor of which the box get resized in case of calling toString();
 	 * 
@@ -45,6 +45,7 @@ public class FreeBox implements Pict {
 		this.scaleFactor = factor;
 		
 	}
+	
 	
 	public double getWidth(){
 		return width;

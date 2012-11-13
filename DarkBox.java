@@ -21,6 +21,7 @@ public class DarkBox implements Pict {
  	}
  	
  	
+ 	
  	/**
  	* resize the picture 
  	* 0.1 <= factor <= 10.0

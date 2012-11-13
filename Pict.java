@@ -15,4 +15,5 @@ public interface Pict {
  	 public double getHeight();
  	 
  	 public double getWidth();
+ 	 
  }
