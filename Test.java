@@ -7,7 +7,9 @@
 //DarkBox would not be a valid subtype of box. The invariant in Box that the frame symbol can't change does not apply to DarkBox. For a suitable subtype invariants
 //in subtypes have to have stricter invariants. For a valid subtype relation constant variables in the supertype need a equivalent(subtype of the variabletype in the supertype) variable type.
 //FreeBox would not be a valid subtype of box either. Because it is completely different from Box in regards to its variables. In regards to the methods this could work though. 
- 
+//If P of Scaled<P> is an unknown, valid P, than P must be a subtype of Pict
+
+
 //Testclass 
 public class Test {
 	public static void main(String[] args) {
@@ -16,7 +18,7 @@ public class Test {
 		FreeBox box4;
 		DarkBox box5;
 		
-		Pict[][] repeated = new Pict[10][11];
+		Pict[][] repeated = new Pict[4][5];
 		
 		//create new Box with width=5, height=5, content=0 and frame=-
 		box1 = new Box(5,5,'o','-');
@@ -82,13 +84,13 @@ public class Test {
 		repeated[1][1] = box3;
 		repeated[0][2] = box4;//GRAD GEADDED BITTE CHECKEN OB DER OUTPUT PASST
 		repeated[1][2] = box5;//HIER AUCH CHECKEN
-		/*
-		Scaled scale = new Scaled(repeated);
 		
+		Scaled scale = new Scaled(repeated);
+		/*
 		System.out.println("Rep to String");
 		System.out.println(scale.toString());*/
 		
-		Repeated rep = new Repeated(repeated);
+		newRepeated rep = new newRepeated(repeated);
 		System.out.println(rep.toString());
 	}
 }
