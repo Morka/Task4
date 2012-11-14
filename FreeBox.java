@@ -4,26 +4,18 @@
  
 public class FreeBox implements Pict {
 	
-	 private double height, width; 
+	 private double height, width; //Invariant: height and width > 0
 	 private double scaleFactor;
-	 private String[] text; //ODER CHAR[][]
+	 private String[] text;
 	 
  	 public FreeBox(String content) {
- 	 	 //height = number of chars the height of the box, > 0
- 	 	 //width = number of chars building the width of the box, > 0
- 	 	 //proportion betwenn height and width stays always the same
- 	 	 //content = content filled by specific char, not modifiable after initialisation in Constructor
- 	 	 //frame = frame build by specific char, not modifiable after initialisation in Constructor
- 	 	 //this.height = height;
- 	 	 //this.width = width;
- 	 	 //this.text = content;
+ 		 //Precondition: content is a rectangular shaped text
+ 		 //Postcondition: the height and width are caluclated, the scaleFactor's default value is set and the text is saved
+ 		 //in a string array
  	 	 this.text = content.split("\n");
  	 	 this.height = this.text.length;
  	 	 this.width = this.text[0].length();
  	 	 this.scaleFactor = 1.0;
- 	 	 //System.out.println(this.text[0].charAt(1));
- 	 	 //System.out.println(this.height);
- 	 	 //System.out.println(this.width);
  	 }
  	 
  	 /**
@@ -32,6 +24,7 @@ public class FreeBox implements Pict {
  	  * @return ratio of width and height
  	  */
  	 public double getRatio() {
+ 		 //Postcondition: calculates and returns the ratio of width and height
  	 	 return (this.width)/(this.height);
  	 }
  	 
@@ -41,17 +34,20 @@ public class FreeBox implements Pict {
 	 * @param factor the factor the box dimensions will be resized
 	 */
 	public void scale(double factor) {
-
-		this.scaleFactor = factor;
+		//Precondition: 0.1 <= factor <= 10.0
+		//Postcondition: calculates the new size of the box and stores scaleFactor
+		this.scaleFactor *= factor;
 		
 	}
 	
 	public double getWidth(){
-		return width;
+		//Postcondition: returns the width of the Box
+		return width * scaleFactor;
 	}
 	
 	public double getHeight(){
-		return height;
+		//Postcondition: returns the height of the Box
+		return height * scaleFactor;
 	}
 	
 	/**
@@ -60,6 +56,7 @@ public class FreeBox implements Pict {
 	 * @return printable String representation of the box
 	 */
 	public String toString() {
+		//Postcondition: calculates the size of the box, creates and returns a rectangular String representation of the Box
  		String ret = "";
  		int outputHeight = (int)Math.ceil(height * scaleFactor); 
  		int outputWidth = (int)Math.ceil(width * scaleFactor);

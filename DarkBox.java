@@ -6,16 +6,17 @@ import java.lang.Math;
  
 public class DarkBox implements Pict {
 	// instances represent 2-dimensional pictures
- 	// consisting of printable characters
  	
- 	private double height; 		//number of chars the height of the box, > 0
- 	private double width; 		//number of chars building the width of the box, > 0
- 	//proportion betwenn height and width stays always the same
- 	private char frame; 	//frame build by specific char, not modifiable after initialisation in Constructor
+ 	private double height; 		//Invariant: height > 0
+ 	private double width; 		//Invariant: width > 0
+ 	//Invariant: proportion of the DarkBox stays always the same
+ 	private char frame;
 
  	
  	public DarkBox(double width, double height, char frame) {
- 		this.frame = frame; 	//not modifiable
+ 		//Precondition: width and height > 0, char != null
+ 		//Postcondition: all classvariables are set
+ 		this.frame = frame;
  		this.width = width;
  		this.height = height;
  	}
@@ -24,11 +25,12 @@ public class DarkBox implements Pict {
  	
  	/**
  	* resize the picture 
- 	* 0.1 <= factor <= 10.0
 	*	
 	* @param factor factor to resize current length and height 
 	*/
  	public void scale(double factor) {
+ 		//Precondition: 0.1 <= factor <= 10.00
+ 		//Postcondition: calculates and stores the new dimensions of the DarkBox
  		height *= factor;
  		width *= factor;
  	}
@@ -40,6 +42,7 @@ public class DarkBox implements Pict {
 	* @return String of picture
 	*/
  	public String toString() {
+ 		//Postcondition: returns a quadratic string representation of the DarkBox
  		String ret = "";
  		int roundheight = (int)Math.ceil(height); 
  		int roundwidth = (int)Math.ceil(width);
@@ -63,6 +66,7 @@ public class DarkBox implements Pict {
 	* @return double of width
 	*/
  	public double getWidth() {
+ 		//Postcondition: returns the current width of the DarkBox
  		return width;
  	}
  	
@@ -72,6 +76,7 @@ public class DarkBox implements Pict {
 	* @return double of height
 	*/
  	public double getHeight() {
+ 		//Precondition: returns the current height of the DarkBox
  		return height;
  	}
  	
@@ -81,6 +86,8 @@ public class DarkBox implements Pict {
  	 * @param the new char for the frame
  	 */
  	public void setFrame(char newFrame){
+ 		//Precondition: newFrame != null
+ 		//Postcondition: this.frame is set to the new frame char newFrame
  		
  		this.frame = newFrame;
  		
