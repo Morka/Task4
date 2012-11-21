@@ -7,7 +7,11 @@
 //DarkBox would not be a valid subtype of box. The invariant in Box that the frame symbol can't change does not apply to DarkBox. For a suitable subtype invariants
 //in subtypes have to have stricter invariants. For a valid subtype relation constant variables in the supertype need a equivalent(subtype of the variabletype in the supertype) variable type.
 //FreeBox would not be a valid subtype of box either. Because it is completely different from Box in regards to its variables. In regards to the methods this could work though. 
-//If P of Scaled<P> is an unknown, valid P, than P must be a subtype of Pict
+//If P of Scaled<P> is an unknown, valid P, than P must be a subtype of Pict or Pict
+//Scaled<P> is a subtype of Repeatet<P>
+//Repeated<P> for P is subtype of Pict is a subtype of Repeated<P>
+//Repeated<Char> isn't a subtype of Repeated<P> for P is subtype of Pict
+//Repeated<Char> is subtype of Repeated<P>
 
 
 //Testclass 
