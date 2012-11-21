@@ -18,7 +18,9 @@ public class Test {
 		FreeBox box4;
 		DarkBox box5;
 		
+		Pict[][] scaled = new Pict[4][5];
 		Pict[][] repeated = new Pict[4][5];
+
 		
 		//create new Box with width=5, height=5, content=0 and frame=-
 		box1 = new Box(5,5,'o','-');
@@ -78,19 +80,30 @@ public class Test {
 		System.out.println(box5.toString());
 		
 		System.out.println("box3.getRatio(): " + box3.getRatio());
+		String str = "hallo\n";
+		str += "heyho\n";
+		
+		char[][] chr = new char[2][2];
+		chr[0][0] = 'h';
+		chr[0][1] = 't';
+		chr[1][0] = 'z';
+		chr[1][1] = 'u';
+
 		
 		repeated[0][0] = box1;
 		repeated[0][1] = box2;
-		repeated[1][1] = box3;
-		repeated[0][2] = box4;//GRAD GEADDED BITTE CHECKEN OB DER OUTPUT PASST
-		repeated[1][2] = box5;//HIER AUCH CHECKEN
 		
-		Scaled scale = new Scaled(repeated);
-		/*
+		
+		scaled[1][1] = box3;
+		scaled[0][2] = box4;
+		scaled[1][2] = box5;
+		
+		Scaled<Pict> scale = new Scaled<Pict>(scaled);
+
 		System.out.println("Rep to String");
-		System.out.println(scale.toString());*/
+		System.out.println(scale.toString());
 		
-		newRepeated rep = new newRepeated(repeated);
+		Repeated<Pict> rep = new Repeated<Pict>(repeated);
 		System.out.println(rep.toString());
 	}
 }

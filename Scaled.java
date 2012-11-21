@@ -1,16 +1,15 @@
 import java.lang.Math;
 
-public class Scaled implements Pict{
-	private Pict[][] repeated;
+public class Scaled<P extends Pict> implements Pict{
+	private P[][] repeated;
 	private double scaleFactor;
 	private double width; //Invariant: width > 0
 	private double height; //Invariant: height > 0
 	
 	
-	public Scaled(Pict[][] repeated){
+	public Scaled(P[][] repeated){
 		//Precondition: repeated != null
 		//Postcondition: all classvariables are set
-		this.repeated = new Pict[repeated.length][repeated[0].length];
 		this.repeated = repeated;
 		this.scaleFactor = 1.0;
 		searchForBiggest();
