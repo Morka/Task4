@@ -14,10 +14,16 @@ public class Box implements Pict {
  	private final char content; 	//content filled by specific char, not modifiable after initialisation in Constructor
  	private final char frame; 	//frame build by specific char, not modifiable after initialisation in Constructor
 
- 	
+ 	//precondition: spcae is not allowed for frame
  	public Box(double width, double height, char content, char frame) {
+ 		if(frame != 'c')
+ 			this.frame = frame; 	//not modifiable
+ 		else
+ 		{
+ 			this.frame = 'o';
+ 			System.out.println("Error: Frame darf nicht aus Leerzeichen gebildet werden");
+ 		}
  		this.content = content; //not modifiable
- 		this.frame = frame; 	//not modifiable
  		this.width = width;
  		this.height = height;
  	}
